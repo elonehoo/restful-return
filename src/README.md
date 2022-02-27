@@ -20,7 +20,7 @@ footer: MIT Licensed | Copyright © 2022-present Elone Hoo
 <dependency>
   <groupId>io.github.xiaoxunyao</groupId>
   <artifactId>restful-return</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
 </dependency>
 ```
 :::
