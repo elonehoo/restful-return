@@ -1,3 +1,5 @@
+<p align="center"><a href="/"><img width="120" src="/logo/logo.svg" alt="axios logo"></a></p>
+
 # restful-return
 
 SpringBoot based return value types are supported by browsers.
