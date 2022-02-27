@@ -7,7 +7,7 @@
   <name>restful-return</name>
   <groupId>io.github.xiaoxunyao</groupId>
   <description>spring integrate restful return</description>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <url>https://github.com/xiaoxunyao/restful-return</url>
 
   <artifactId>restful-return</artifactId>
