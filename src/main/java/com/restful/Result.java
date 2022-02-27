@@ -432,7 +432,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result multiStatus(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.MULTI_STATUS);
     }
 
     /**--------------- ALREADY_REPORTED -----------------*/
@@ -466,7 +466,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result alreadyReported(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.ALREADY_REPORTED);
     }
 
     /**--------------- IM_USED -----------------*/
@@ -500,7 +500,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result imUsed(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.IM_USED);
     }
 
     /**--------------- MULTIPLE_CHOICES -----------------*/
@@ -534,7 +534,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result multipleChoices(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.MULTIPLE_CHOICES);
     }
 
     /**--------------- MOVED_PERMANENTLY -----------------*/
@@ -568,7 +568,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result movedPermanently(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.MOVED_PERMANENTLY);
     }
 
     /**--------------- FOUND -----------------*/
@@ -602,7 +602,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result found(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.FOUND);
     }
 
     /**--------------- SEE_OTHER -----------------*/
@@ -636,7 +636,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result seeOther(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.SEE_OTHER);
     }
 
     /**--------------- NOT_MODIFIED -----------------*/
@@ -670,7 +670,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result notModified(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.NOT_MODIFIED);
     }
 
     /**--------------- TEMPORARY_REDIRECT -----------------*/
@@ -704,7 +704,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result temporaryRedirect(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.TEMPORARY_REDIRECT);
     }
 
     /**--------------- PERMANENT_REDIRECT -----------------*/
@@ -738,7 +738,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result permanentRedirect(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.PERMANENT_REDIRECT);
     }
 
     /**--------------- BAD_REQUEST -----------------*/
@@ -772,7 +772,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result badRequests(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.BAD_REQUEST);
     }
 
     /**--------------- UNAUTHORIZED -----------------*/
@@ -806,7 +806,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result unauthorized(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.UNAUTHORIZED);
     }
 
     /**--------------- PAYMENT_REQUIRED -----------------*/
@@ -840,7 +840,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result paymentRequired(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.PAYMENT_REQUIRED);
     }
 
     /**--------------- FORBIDDEN -----------------*/
@@ -874,7 +874,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result forbidden(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.FORBIDDEN);
     }
 
     /**--------------- NOT_FOUND -----------------*/
@@ -908,7 +908,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result notFounds(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.NOT_FOUND);
     }
 
     /**--------------- METHOD_NOT_ALLOWED -----------------*/
@@ -942,7 +942,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result methodNotAllowed(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.METHOD_NOT_ALLOWED);
     }
 
     /**--------------- NOT_ACCEPTABLE -----------------*/
@@ -976,7 +976,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result notAcceptable(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.NOT_ACCEPTABLE);
     }
 
     /**--------------- PROXY_AUTHENTICATION_REQUIRED -----------------*/
@@ -1010,7 +1010,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result proxyAuthenticationRequired(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.PROXY_AUTHENTICATION_REQUIRED);
     }
 
     /**--------------- REQUEST_TIMEOUT -----------------*/
@@ -1044,7 +1044,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result requestTimeout(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.REQUEST_TIMEOUT);
     }
 
     /**--------------- CONFLICT -----------------*/
@@ -1078,7 +1078,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result conflict(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.CONFLICT);
     }
 
     /**--------------- GONE -----------------*/
@@ -1112,7 +1112,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result gone(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.GONE);
     }
 
     /**--------------- LENGTH_REQUIRED -----------------*/
@@ -1146,7 +1146,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result lengthRequired(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.LENGTH_REQUIRED);
     }
 
     /**--------------- PRECONDITION_FAILED -----------------*/
@@ -1180,7 +1180,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result preconditionFailed(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.PRECONDITION_FAILED);
     }
 
     /**--------------- PAYLOAD_TOO_LARGE -----------------*/
@@ -1214,7 +1214,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result payloadTooLarge(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.PAYLOAD_TOO_LARGE);
     }
 
     /**--------------- URI_TOO_LONG -----------------*/
@@ -1248,7 +1248,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result uriTooLong(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.URI_TOO_LONG);
     }
 
     /**--------------- UNSUPPORTED_MEDIA_TYPE -----------------*/
@@ -1282,7 +1282,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result unsupportedMediaType(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.UNSUPPORTED_MEDIA_TYPE);
     }
 
     /**--------------- REQUESTED_RANGE_NOT_SATISFIABLE -----------------*/
@@ -1316,7 +1316,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result requestedRangeNotSatisfiable(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.REQUESTED_RANGE_NOT_SATISFIABLE);
     }
 
     /**--------------- EXPECTATION_FAILED -----------------*/
@@ -1350,7 +1350,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result expectationFailed(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.EXPECTATION_FAILED);
     }
 
     /**--------------- I_AM_A_TEAPOT -----------------*/
@@ -1384,7 +1384,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result iAmATeapot(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.I_AM_A_TEAPOT);
     }
 
     /**--------------- UNPROCESSABLE_ENTITY -----------------*/
@@ -1418,7 +1418,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result unprocessableSubstance(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
     /**--------------- LOCKED -----------------*/
@@ -1452,7 +1452,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result locked(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.LOCKED);
     }
 
     /**--------------- FAILED_DEPENDENCY -----------------*/
@@ -1486,7 +1486,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result failedDependency(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.FAILED_DEPENDENCY);
     }
 
     /**--------------- UPGRADE_REQUIRED -----------------*/
@@ -1520,7 +1520,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result upgradeRequired(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.UPGRADE_REQUIRED);
     }
 
     /**--------------- PRECONDITION_REQUIRED -----------------*/
@@ -1554,7 +1554,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result preconditionRequired(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.PRECONDITION_REQUIRED);
     }
 
     /**--------------- TOO_MANY_REQUESTS -----------------*/
@@ -1588,7 +1588,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result tooManyRequests(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.TOO_MANY_REQUESTS);
     }
 
     /**--------------- REQUEST_HEADER_FIELDS_TOO_LARGE -----------------*/
@@ -1622,7 +1622,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result requestHeaderFieldsTooLarge(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.REQUEST_HEADER_FIELDS_TOO_LARGE);
     }
 
     /**--------------- UNAVAILABLE_FOR_LEGAL_REASONS -----------------*/
@@ -1656,7 +1656,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result unavailableForLegalReasons(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.UNAVAILABLE_FOR_LEGAL_REASONS);
     }
 
     /**--------------- INTERNAL_SERVER_ERROR -----------------*/
@@ -1690,7 +1690,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result internalServerError(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     /**--------------- NOT_IMPLEMENTED -----------------*/
@@ -1724,7 +1724,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result notImplemented(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.NOT_IMPLEMENTED);
     }
 
     /**--------------- BAD_GATEWAY -----------------*/
@@ -1758,7 +1758,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result badGateway(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.BAD_GATEWAY);
     }
 
     /**--------------- SERVICE_UNAVAILABLE -----------------*/
@@ -1792,7 +1792,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result serviceUnavailable(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.SERVICE_UNAVAILABLE);
     }
 
     /**--------------- GATEWAY_TIMEOUT -----------------*/
@@ -1826,7 +1826,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result gatewayTimeout(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.GATEWAY_TIMEOUT);
     }
 
     /**--------------- HTTP_VERSION_NOT_SUPPORTED -----------------*/
@@ -1860,7 +1860,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result httpVersionNotSupported(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.HTTP_VERSION_NOT_SUPPORTED);
     }
 
     /**--------------- VARIANT_ALSO_NEGOTIATES -----------------*/
@@ -1894,7 +1894,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result variantAlsoNegotiates(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.VARIANT_ALSO_NEGOTIATES);
     }
 
     /**--------------- INSUFFICIENT_STORAGE -----------------*/
@@ -1928,7 +1928,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result insufficientStorage(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.INSUFFICIENT_STORAGE);
     }
 
     /**--------------- LOOP_DETECTED -----------------*/
@@ -1962,7 +1962,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result loopDetected(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.LOOP_DETECTED);
     }
 
     /**--------------- BANDWIDTH_LIMIT_EXCEEDED -----------------*/
@@ -1996,7 +1996,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result bandwidthLimitExceeded(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.BANDWIDTH_LIMIT_EXCEEDED);
     }
 
     /**--------------- NOT_EXTENDED -----------------*/
@@ -2030,7 +2030,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result notExtended(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.NOT_EXTENDED);
     }
 
     /**--------------- NETWORK_AUTHENTICATION_REQUIRED -----------------*/
@@ -2064,7 +2064,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result networkAuthenticationRequired(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.PARTIAL_CONTENT);
+        return new Result(body,headers,HttpStatus.NETWORK_AUTHENTICATION_REQUIRED);
     }
 
     public Result(HttpStatus status) {
