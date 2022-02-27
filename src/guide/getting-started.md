@@ -14,13 +14,13 @@ You can learn more project in the [Why restful-return](./why) section.
 <dependency>
   <groupId>io.github.xiaoxunyao</groupId>
   <artifactId>restful-return</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
 </dependency>
 ```
 :::
 ::: code-group-item gradle
 ```xml:no-line-numbers
-implementation 'io.github.xiaoxunyao:restful-return:0.0.1'
+implementation 'io.github.xiaoxunyao:restful-return:0.0.2'
 ```
 :::
 ::::
