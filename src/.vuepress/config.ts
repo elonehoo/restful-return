@@ -11,6 +11,8 @@ export default defineUserConfig<DefaultThemeOptions>({
   themeConfig: {
     logo: 'logo/logo.svg',
 	repo:'xiaoxunyao/restful-return',
+	docsBranch:'docs',
+	docsDir:'src',
 	navbar: [
         {
           text: 'Guide',
