@@ -3,6 +3,7 @@ import type { DefaultThemeOptions } from 'vuepress'
 import {version} from '../../package.json'
 
 export default defineUserConfig<DefaultThemeOptions>({
+  base:'/restful-return/',
   // 站点配置
   lang: 'en-US',
   title: 'restful-return',
