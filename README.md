@@ -1,5 +1,9 @@
 <p align="center"><a href="/"><img width="120" src="/logo/logo.svg" alt="axios logo"></a></p>
 
+<a href="https://mvnrepository.com/artifact/io.github.xiaoxunyao/restful-return">
+    <img src="https://img.shields.io/maven-central/v/io.github.xiaoxunyao/restful-return.svg" alt="maven-central">
+</a>
+
 # restful-return
 
 SpringBoot based return value types are supported by browsers.
