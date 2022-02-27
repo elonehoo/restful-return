@@ -16,7 +16,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 	navbar: [
         {
           text: 'Guide',
-          link: '/guide/',
+          link: '/guide/getting-started',
         },
 		{
 			text: 'API',
