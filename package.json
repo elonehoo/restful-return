@@ -1,0 +1,16 @@
+{
+  "name": "restful-return-docs",
+  "version": "0.0.1",
+  "description": "SpringBoot based return value types are supported by browsers.",
+  "main": "index.js",
+  "repository": "https://github.com/xiaoxunyao/restful-return",
+  "author": "Elone Hoo",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.35"
+  },
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  }
+}
