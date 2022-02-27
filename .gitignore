@@ -5,7 +5,10 @@ target
 .classpath
 .project
 .idea
-xiaoHttp.iml
+resuful-return.iml
+node_modules
+.cache
+.temp
 
 # Compiled class file
 *.class
