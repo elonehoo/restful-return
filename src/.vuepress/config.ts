@@ -68,4 +68,17 @@ export default defineUserConfig<DefaultThemeOptions>({
 		],
 	  }
   },
+  plugins:[
+	[
+	  '@vuepress/plugin-search',
+	  {
+		isSearchable: (page) => page.path !== '/',
+		locales: {
+		  '/': {
+			placeholder: 'Search',
+		  },
+		},
+	  },
+	],
+  ]
 })

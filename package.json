@@ -12,5 +12,8 @@
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src"
+  },
+  "dependencies": {
+    "@vuepress/plugin-search": "^2.0.0-beta.35"
   }
 }
