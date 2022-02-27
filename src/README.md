@@ -7,7 +7,7 @@ actions:
     link: /guide/getting-started.html
     type: primary
   - text: Introduction
-    link: /guide/
+    link: /guide/why
     type: secondary
 footer: MIT Licensed | Copyright © 2022-present Elone Hoo
 ---

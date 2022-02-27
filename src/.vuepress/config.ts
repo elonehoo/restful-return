@@ -15,13 +15,13 @@ export default defineUserConfig<DefaultThemeOptions>({
           text: 'Guide',
           link: '/guide/',
         },
+		{
+			text: 'API',
+			link: '/api/',
+		  },
         {
           text: 'Issue',
           link: 'https://github.com/xiaoxunyao/restful-return/issues'
-        },
-        {
-          text: 'Pull Requests',
-          link: 'https://github.com/xiaoxunyao/restful-return/pulls'
         },
 		/**
         {
@@ -56,7 +56,13 @@ export default defineUserConfig<DefaultThemeOptions>({
 		'/guide/': [
 			{
 			  text: 'Guide',
-			  children: ['/guide/README.md', '/guide/getting-started.md'],
+			  children: ['/guide/why.md', '/guide/getting-started.md'],
+			},
+		],
+		'/api/': [
+			{
+			  text: '',
+			  children: ['/api/README.md',],
 			},
 		],
 	  }
