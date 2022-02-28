@@ -9,7 +9,7 @@ You can learn more project in the [Why restful-return](./why) section.
 ## Adding restful-return to your Project
 
 :::: code-group
-::: code-group-item maven
+::: code-group-item Maven
 ```xml:no-line-numbers
 <dependency>
   <groupId>io.github.xiaoxunyao</groupId>
@@ -18,7 +18,7 @@ You can learn more project in the [Why restful-return](./why) section.
 </dependency>
 ```
 :::
-::: code-group-item gradle
+::: code-group-item Gradle
 ```xml:no-line-numbers
 implementation 'io.github.xiaoxunyao:restful-return:0.0.3'
 ```
@@ -41,7 +41,7 @@ public Result demo(){
 ```
 :::
 ::: code-group-item builder API
-```java
+```java:no-line-numbers
 @GetMapping("/demo1")
 public Result demo1(){
 	List<String> list = new ArrayList<>();
