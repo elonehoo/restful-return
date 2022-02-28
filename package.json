@@ -1,6 +1,6 @@
 {
   "name": "restful-return-docs",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "SpringBoot based return value types are supported by browsers.",
   "main": "index.js",
   "repository": "https://github.com/xiaoxunyao/restful-return",
