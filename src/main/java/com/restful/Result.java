@@ -1,10 +1,20 @@
 package com.restful;
 
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.util.MultiValueMap;
+import com.restful.http.HttpStatus;
+import com.restful.response.HttpEntity;
+import com.restful.header.HttpHeaders;
+import com.restful.response.ResponseEntity;
+import com.restful.map.MultiValueMap;
+import org.springframework.http.CacheControl;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.lang.Nullable;
+import org.springframework.util.Assert;
+
+import java.net.URI;
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  * Extension of {@link HttpEntity} that adds a {@link HttpStatus} status code.
@@ -57,7 +67,7 @@ public class Result extends ResponseEntity<Object> {
      * @return {@link Result}
      */
     public static Result continues(Object body, HttpHeaders headers){
-        return new Result(body,headers,HttpStatus.CONTINUE);
+        return new Result(body,headers, HttpStatus.CONTINUE);
     }
 
     /**--------------- SWITCHING_PROTOCOLS -----------------*/
@@ -168,31 +178,31 @@ public class Result extends ResponseEntity<Object> {
      * Create a builder with the status set to {@linkplain HttpStatus#OK OK}.
      * @return {@link Result}
      */
-    public static Result success(){
-        return Result.success(null,null);
+    public static Result ok(){
+        return Result.ok(null,null);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#OK OK}.
      * @return {@link Result}
      */
-    public static Result success(Object body){
-        return Result.success(body,null);
+    public static Result ok(Object body){
+        return Result.ok(body,null);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#OK OK}.
      * @return {@link Result}
      */
-    public static Result success(HttpHeaders headers){
-        return Result.success(null,headers);
+    public static Result ok(HttpHeaders headers){
+        return Result.ok(null,headers);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#OK OK}.
      * @return {@link Result}
      */
-    public static Result success(Object body, HttpHeaders headers){
+    public static Result ok(Object body, HttpHeaders headers){
         return new Result(body,headers,HttpStatus.OK);
     }
 
@@ -236,31 +246,31 @@ public class Result extends ResponseEntity<Object> {
      * Create a builder with the status set to {@linkplain HttpStatus#ACCEPTED ACCEPTED}.
      * @return {@link Result}
      */
-    public static Result acceptably(){
-        return Result.acceptably(null,null);
+    public static Result accepted(){
+        return Result.accepted(null,null);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#ACCEPTED ACCEPTED}.
      * @return {@link Result}
      */
-    public static Result acceptably(Object body){
-        return Result.acceptably(body,null);
+    public static Result accepted(Object body){
+        return Result.accepted(body,null);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#ACCEPTED ACCEPTED}.
      * @return {@link Result}
      */
-    public static Result acceptably(HttpHeaders headers){
-        return Result.acceptably(null,headers);
+    public static Result accepted(HttpHeaders headers){
+        return Result.accepted(null,headers);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#ACCEPTED ACCEPTED}.
      * @return {@link Result}
      */
-    public static Result acceptably(Object body, HttpHeaders headers){
+    public static Result accepted(Object body, HttpHeaders headers){
         return new Result(body,headers,HttpStatus.ACCEPTED);
     }
 
@@ -305,31 +315,31 @@ public class Result extends ResponseEntity<Object> {
      * Create a builder with the status set to {@linkplain HttpStatus#NO_CONTENT NO_CONTENT}.
      * @return {@link Result}
      */
-    public static Result noContents(){
-        return Result.noContents(null,null);
+    public static Result noContent(){
+        return Result.noContent(null,null);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#NO_CONTENT NO_CONTENT}.
      * @return {@link Result}
      */
-    public static Result noContents(Object body){
-        return Result.noContents(body,null);
+    public static Result noContent(Object body){
+        return Result.noContent(body,null);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#NO_CONTENT NO_CONTENT}.
      * @return {@link Result}
      */
-    public static Result noContents(HttpHeaders headers){
-        return Result.noContents(null,headers);
+    public static Result noContent(HttpHeaders headers){
+        return Result.noContent(null,headers);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#NO_CONTENT NO_CONTENT}.
      * @return {@link Result}
      */
-    public static Result noContents(Object body, HttpHeaders headers){
+    public static Result noContent(Object body, HttpHeaders headers){
         return new Result(body,headers,HttpStatus.NO_CONTENT);
     }
 
@@ -747,31 +757,31 @@ public class Result extends ResponseEntity<Object> {
      * Create a builder with the status set to {@linkplain HttpStatus#BAD_REQUEST BAD_REQUEST}.
      * @return {@link Result}
      */
-    public static Result badRequests(){
-        return Result.badRequests(null,null);
+    public static Result badRequest(){
+        return Result.badRequest(null,null);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#BAD_REQUEST BAD_REQUEST}.
      * @return {@link Result}
      */
-    public static Result badRequests(Object body){
-        return Result.badRequests(body,null);
+    public static Result badRequest(Object body){
+        return Result.badRequest(body,null);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#BAD_REQUEST BAD_REQUEST}.
      * @return {@link Result}
      */
-    public static Result badRequests(HttpHeaders headers){
-        return Result.badRequests(null,headers);
+    public static Result badRequest(HttpHeaders headers){
+        return Result.badRequest(null,headers);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#BAD_REQUEST BAD_REQUEST}.
      * @return {@link Result}
      */
-    public static Result badRequests(Object body, HttpHeaders headers){
+    public static Result badRequest(Object body, HttpHeaders headers){
         return new Result(body,headers,HttpStatus.BAD_REQUEST);
     }
 
@@ -883,31 +893,31 @@ public class Result extends ResponseEntity<Object> {
      * Create a builder with the status set to {@linkplain HttpStatus#NOT_FOUND NOT_FOUND}.
      * @return {@link Result}
      */
-    public static Result notFounds(){
-        return Result.notFounds(null,null);
+    public static Result notFound(){
+        return Result.notFound(null,null);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#NOT_FOUND NOT_FOUND}.
      * @return {@link Result}
      */
-    public static Result notFounds(Object body){
-        return Result.notFounds(body,null);
+    public static Result notFound(Object body){
+        return Result.notFound(body,null);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#NOT_FOUND NOT_FOUND}.
      * @return {@link Result}
      */
-    public static Result notFounds(HttpHeaders headers){
-        return Result.notFounds(null,headers);
+    public static Result notFound(HttpHeaders headers){
+        return Result.notFound(null,headers);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#NOT_FOUND NOT_FOUND}.
      * @return {@link Result}
      */
-    public static Result notFounds(Object body, HttpHeaders headers){
+    public static Result notFound(Object body, HttpHeaders headers){
         return new Result(body,headers,HttpStatus.NOT_FOUND);
     }
 
@@ -1393,31 +1403,31 @@ public class Result extends ResponseEntity<Object> {
      * Create a builder with the status set to {@linkplain HttpStatus#UNPROCESSABLE_ENTITY UNPROCESSABLE_ENTITY}.
      * @return {@link Result}
      */
-    public static Result unprocessableSubstance(){
-        return Result.unprocessableSubstance(null,null);
+    public static Result unprocessableEntity(){
+        return Result.unprocessableEntity(null,null);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#UNPROCESSABLE_ENTITY UNPROCESSABLE_ENTITY}.
      * @return {@link Result}
      */
-    public static Result unprocessableSubstance(Object body){
-        return Result.unprocessableSubstance(body,null);
+    public static Result unprocessableEntity(Object body){
+        return Result.unprocessableEntity(body,null);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#UNPROCESSABLE_ENTITY UNPROCESSABLE_ENTITY}.
      * @return {@link Result}
      */
-    public static Result unprocessableSubstance(HttpHeaders headers){
-        return Result.unprocessableSubstance(null,headers);
+    public static Result unprocessableEntity(HttpHeaders headers){
+        return Result.unprocessableEntity(null,headers);
     }
 
     /**
      * Create a builder with the status set to {@linkplain HttpStatus#UNPROCESSABLE_ENTITY UNPROCESSABLE_ENTITY}.
      * @return {@link Result}
      */
-    public static Result unprocessableSubstance(Object body, HttpHeaders headers){
+    public static Result unprocessableEntity(Object body, HttpHeaders headers){
         return new Result(body,headers,HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
@@ -2082,4 +2092,239 @@ public class Result extends ResponseEntity<Object> {
     public Result(Object body, MultiValueMap<String, String> headers, HttpStatus status) {
         super(body, headers, status);
     }
+
+	public Result(Object body, MultiValueMap<String, String> headers, Object status) {
+		super(body, headers, (HttpStatus) status);
+	}
+
+	/**--------------- Builder mode -----------------*/
+
+	/**
+	 * Create a builder with the given status.
+	 * @param status the response status
+	 * @return the created builder
+	 */
+	public static BodyBuilder status(HttpStatus status) {
+		Assert.notNull(status, "HttpStatus must not be null");
+		return new DefaultBuilder(status);
+	}
+
+	public static BodyBuilder status(int status){
+		return new DefaultBuilder(status);
+	}
+
+	/**
+	 * Defines a builder that adds headers to the response entity.
+	 * @param <B>
+	 */
+	public interface HeadersBuilder<B extends HeadersBuilder<B>> {
+
+		/**
+		 * Add the given, single header value under the given name.
+		 * @param headerName the header name
+		 * @param headerValues the header value(s)
+		 * @return this builder
+		 * @see HttpHeaders#add(String, String)
+		 */
+		B header(String headerName, String... headerValues);
+
+		/**
+		 * Copy the given headers into the entity's headers map.
+		 * @param headers the existing HttpHeaders to copy from
+		 * @return this builder
+		 * @see HttpHeaders#add(String, String)
+		 */
+		B headers(@Nullable HttpHeaders headers);
+
+		/**
+		 * Set the set of allowed {@link HttpMethod HTTP methods}, as specified
+		 * by the {@code Allow} header.
+		 * @param allowedMethods the allowed methods
+		 * @return this builder
+		 * @see HttpHeaders#setAllow(Set)
+		 */
+		B allow(HttpMethod... allowedMethods);
+
+		/**
+		 * Set the entity tag of the body, as specified by the {@code ETag} header.
+		 * @param etag the new entity tag
+		 * @return this builder
+		 * @see HttpHeaders#setETag(String)
+		 */
+		B eTag(String etag);
+
+		/**
+		 * Set the time the resource was last changed, as specified by the
+		 * {@code Last-Modified} header.
+		 * <p>The date should be specified as the number of milliseconds since
+		 * January 1, 1970 GMT.
+		 * @param lastModified the last modified date
+		 * @return this builder
+		 * @see HttpHeaders#setLastModified(long)
+		 */
+		B lastModified(long lastModified);
+
+		/**
+		 * Set the location of a resource, as specified by the {@code Location} header.
+		 * @param location the location
+		 * @return this builder
+		 * @see HttpHeaders#setLocation(URI)
+		 */
+		B location(URI location);
+
+		/**
+		 * Set the caching directives for the resource, as specified by the HTTP 1.1
+		 * {@code Cache-Control} header.
+		 * <p>A {@code CacheControl} instance can be built like
+		 * {@code CacheControl.maxAge(3600).cachePublic().noTransform()}.
+		 * @param cacheControl a builder for cache-related HTTP response headers
+		 * @return this builder
+		 * @see <a href="https://tools.ietf.org/html/rfc7234#section-5.2">RFC-7234 Section 5.2</a>
+		 */
+		B cacheControl(CacheControl cacheControl);
+
+		/**
+		 * Configure one or more request header names (e.g. "Accept-Language") to
+		 * add to the "Vary" response header to inform clients that the response is
+		 * subject to content negotiation and variances based on the value of the
+		 * given request headers. The configured request header names are added only
+		 * if not already present in the response "Vary" header.
+		 * @param requestHeaders request header names
+		 */
+		B varyBy(String... requestHeaders);
+
+		/**
+		 * Build the response entity with no body.
+		 * @return the response entity
+		 * @see BodyBuilder#body(Object)
+		 */
+		Result build();
+	}
+
+	/**
+	 * Defines a builder that adds a body to the response entity.
+	 */
+	public interface BodyBuilder extends HeadersBuilder<BodyBuilder> {
+
+		/**
+		 * Set the length of the body in bytes, as specified by the
+		 * {@code Content-Length} header.
+		 * @param contentLength the content length
+		 * @return this builder
+		 * @see HttpHeaders#setContentLength(long)
+		 */
+		BodyBuilder contentLength(long contentLength);
+
+		/**
+		 * Set the {@linkplain MediaType media type} of the body, as specified by the
+		 * {@code Content-Type} header.
+		 * @param contentType the content type
+		 * @return this builder
+		 * @see HttpHeaders#setContentType(MediaType)
+		 */
+		BodyBuilder contentType(MediaType contentType);
+
+		/**
+		 * Set the body of the response entity and returns it.
+		 * @param body the body of the response entity
+		 * @return the built response entity
+		 */
+		Result body(@Nullable Object body);
+	}
+
+	private static class DefaultBuilder implements BodyBuilder {
+
+		private final Object statusCode;
+
+		private final HttpHeaders headers = new HttpHeaders();
+
+		public DefaultBuilder(Object  statusCode) {
+			this.statusCode = statusCode;
+		}
+
+		@Override
+		public BodyBuilder header(String headerName, String... headerValues) {
+			for (String headerValue : headerValues) {
+				this.headers.add(headerName, headerValue);
+			}
+			return this;
+		}
+
+		@Override
+		public BodyBuilder headers(@Nullable HttpHeaders headers) {
+			if (headers != null) {
+				this.headers.putAll(headers);
+			}
+			return this;
+		}
+
+		@Override
+		public BodyBuilder allow(HttpMethod... allowedMethods) {
+			this.headers.setAllow(new LinkedHashSet<>(Arrays.asList(allowedMethods)));
+			return this;
+		}
+
+		@Override
+		public BodyBuilder contentLength(long contentLength) {
+			this.headers.setContentLength(contentLength);
+			return this;
+		}
+
+		@Override
+		public BodyBuilder contentType(MediaType contentType) {
+			this.headers.setContentType(contentType);
+			return this;
+		}
+
+		@Override
+		public BodyBuilder eTag(String etag) {
+			if (!etag.startsWith("\"") && !etag.startsWith("W/\"")) {
+				etag = "\"" + etag;
+			}
+			if (!etag.endsWith("\"")) {
+				etag = etag + "\"";
+			}
+			this.headers.setETag(etag);
+			return this;
+		}
+
+		@Override
+		public BodyBuilder lastModified(long date) {
+			this.headers.setLastModified(date);
+			return this;
+		}
+
+		@Override
+		public BodyBuilder location(URI location) {
+			this.headers.setLocation(location);
+			return this;
+		}
+
+		@Override
+		public BodyBuilder cacheControl(CacheControl cacheControl) {
+			String ccValue = cacheControl.getHeaderValue();
+			if (ccValue != null) {
+				this.headers.setCacheControl(cacheControl.getHeaderValue());
+			}
+			return this;
+		}
+
+		@Override
+		public BodyBuilder varyBy(String... requestHeaders) {
+			this.headers.setVary(Arrays.asList(requestHeaders));
+			return this;
+		}
+
+		@Override
+		public Result build() {
+			return body(null);
+		}
+
+		@Override
+		public Result body(@Nullable Object body){
+			return new Result(body,this.headers,this.statusCode);
+		}
+
+	}
+
 }
