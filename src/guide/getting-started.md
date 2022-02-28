@@ -27,6 +27,8 @@ implementation 'io.github.xiaoxunyao:restful-return:0.0.3'
 
 ## Examples
 
+:::: code-group
+::: code-group-item base API
 ```java:no-line-numbers
 @GetMapping("/demo")
 public Result demo(){
@@ -37,6 +39,20 @@ public Result demo(){
 	return Result.internalServerError(list);
 }
 ```
+:::
+::: code-group-item builder API
+```java
+@GetMapping("/demo1")
+public Result demo1(){
+	List<String> list = new ArrayList<>();
+	for (int i = 0; i < 10; i++) {
+		list.add(String.valueOf(i));
+	}
+	return Result.status(HttpStatus.CONTINUE).body(list);
+}
+```
+:::
+::::
 
 ## Using Unreleased Commits
 
