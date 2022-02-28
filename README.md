@@ -22,7 +22,7 @@ To use maven add this dependency to your pom.xml:
 <dependency>
   <groupId>io.github.xiaoxunyao</groupId>
   <artifactId>restful-return</artifactId>
-  <version>0.0.2</version>
+  <version>0.0.3</version>
 </dependency>
 ```
 
@@ -37,7 +37,7 @@ mavenCentral()
 Then you can just add the latest version to your build.
 
 ```xml
-implementation 'io.github.xiaoxunyao:restful-return:0.0.2'
+implementation 'io.github.xiaoxunyao:restful-return:0.0.3'
 ```
 
 Standalone jar
